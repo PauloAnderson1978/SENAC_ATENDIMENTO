@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Senac Atendimento</title>
+</head>
+<body>
+    <h1>Dashboard do Aluno</h1>
+    <div id="informacoesAluno"></div>
+    <button onclick="solicitarAtendimento()">Solicitar Atendimento</button>
+
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';  // Redirecionar para o login se não houver token
+        }
+
+        // Função para carregar as informações do aluno
+        async function carregarInformacoesAluno() {
+            const response = await fetch('http://127.0.0.1:5000/alunos', {
+                method: 'GET',
+                headers: {
+                    'Authorization': token
+                }
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                const aluno = data.find(aluno => aluno.id === 1);  // Substitua pelo ID do aluno logado
+                document.getElementById('informacoesAluno').innerHTML = `
+                    <p>Nome: ${aluno.nome}</p>
+                    <p>E-mail: ${aluno.email}</p>
+                    <p>Curso: ${aluno.curso}</p>
+                `;
+            } else {
+                alert(data.erro);
+            }
+        }
+
+        // Função para solicitar atendimento
+        async function solicitarAtendimento() {
+            const response = await fetch('http://127.0.0.1:5000/solicitar_atendimento', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                },
+                body: JSON.stringify({
+                    aluno_id: 1,  // Substitua pelo ID do aluno logado
+                    assistente_id: 1,
+                    data_atendimento: "2023-10-30 14:00:00",
+                    descricao: "Preciso de ajuda com bolsas de estudo."
+                })
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.mensagem);
+            } else {
+                alert(data.erro);
+            }
+        }
+
+        // Carregar as informações do aluno ao abrir a página
+        carregarInformacoesAluno();
+    </script>
+</body>
+</html>
