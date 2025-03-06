@@ -1,0 +1,29 @@
+aside {
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 15px 2px;
+    
+}
+
+aside ul li a {
+    text-decoration: none;
+    transition: 0.1s;
+    color: #2f2e2e;
+    border-radius: 8px;
+    padding: 7px;
+}
+
+aside ul li a:hover{
+    background-color: #e6dbdb;
+    padding: 5px;
+}

@@ -1,0 +1,134 @@
+.pesquisa-alunos {
+    width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pesquisa-alunos h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 24px;
+    color: #333;
+}
+
+.pesquisa-alunos form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pesquisa-alunos .form-group {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.pesquisa-alunos input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 18px;
+    align-items: center;
+    justify-items: center;
+    width: 400px;
+}
+
+.pesquisa-alunos button {
+    padding: 10px 20px;
+    background-color: #326fea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 300px;
+    margin-left: 70px;
+}
+
+.pesquisa-alunos button:hover {
+    background-color: #11347b;
+}
+
+.pesquisa-alunos .erro {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pesquisa-alunos .resultado {
+    margin-top: 10px;
+}
+
+.pesquisa-alunos .foto-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pesquisa-alunos .foto-container img {
+    width: 150px;
+    height: 200px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.pesquisa-alunos .sem-foto {
+    width: 150px;
+    height: 200px;
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin: 0 auto;
+}
+
+.pesquisa-alunos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pesquisa-alunos table th,
+.pesquisa-alunos table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.pesquisa-alunos table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.pesquisa-alunos table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.sugestoes {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    width: 45%;
+    z-index: 1000;
+}
+
+.sugestao {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.sugestao:hover {
+    background-color: #f5f5f5;
+}
